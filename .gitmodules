@@ -1,0 +1,3 @@
+[submodule "/home/user/.emacs.d"]
+	path = /home/user/.emacs.d
+	url = https://github.com/yukiisbored/dotemacs
