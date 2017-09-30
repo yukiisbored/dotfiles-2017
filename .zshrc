@@ -35,6 +35,9 @@ setopt appendhistory autocd beep extendedglob notify nomatch
 
 bindkey -e
 
+bindkey "^[[1;5D" backward-word
+bindkey "^[[1;5C" forward-word
+
 # zplug configuration
 # -------------------
 
