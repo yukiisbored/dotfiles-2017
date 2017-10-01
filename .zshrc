@@ -19,9 +19,6 @@ fi
 export PATH="$HOME/.local/bin:$PATH"
 export VIRTUALENVWRAPPER_PYTHON="/usr/bin/python3"
 
-LP_ENABLE_LOAD=0
-LP_HOSTNAME_ALWAYS=1
-
 alias ls='ls --color'
 alias dot='git --git-dir=$HOME/.cfg --work-tree=$HOME'
 
