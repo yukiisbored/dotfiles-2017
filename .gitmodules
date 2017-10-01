@@ -1,3 +1,3 @@
 [submodule "/home/user/.emacs.d"]
-	path = /home/user/.emacs.d
+	path = .emacs.d
 	url = ../../yukiisbored/dotemacs
