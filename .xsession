@@ -1,3 +1,5 @@
 #!/bin/sh
 
-exec ck-launch-session dbus-launch i3
+. $HOME/.xprofile
+
+exec dbus-launch i3

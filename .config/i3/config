@@ -7,7 +7,7 @@
 set $mod Mod4
 
 # LXTerminal-kun is moe
-set $term lxterminal
+set $term xfce4-terminal
 
 # Use dmenu
 set $menu dmenu_yuki
@@ -19,10 +19,10 @@ set $www firefox
 set $editor emacsclient -nc
 
 # Base color
-set $base_color #34837a
+set $base_color #0f4979
 
 # Accent color
-set $accent_color #50b9ad
+set $accent_color #0f4979
 
 # Use Noto Sans
 font pango:Noto Sans Bold 8
@@ -194,15 +194,15 @@ bindsym $mod+r mode "resize"
 # ==========
 
 bar {
-    position top
-    status_command yukistatus
+    position bottom
+    status_command i3status
 
     font pango: Noto Sans CJK JP Regular, FontAwesome 10
 
     colors {
         statusline #ffffff
-        background #323232
+        background #040b13
         focused_workspace $accent_color $base_color #ffffff
-        inactive_workspace #323232 #323232 #5c5c5c
+        inactive_workspace #050d16 #050d16 #323232
     }
 }
