@@ -19,7 +19,6 @@ fi
 export PATH="$HOME/.local/bin:$PATH"
 export VIRTUALENVWRAPPER_PYTHON="/usr/bin/python3"
 
-alias ls='ls --color'
 alias dot='git --git-dir=$HOME/.cfg --work-tree=$HOME'
 
 # Zsh configuration
@@ -34,6 +33,7 @@ bindkey -e
 
 bindkey "^[[1;5D" backward-word
 bindkey "^[[1;5C" forward-word
+bindkey "^[[3~" delete-char
 
 # zplug configuration
 # -------------------
@@ -68,3 +68,14 @@ if ! zplug check --verbose; then
 fi
 
 zplug load
+# NPM packages in homedir
+NPM_PACKAGES="$HOME/.npm-packages"
+
+# Tell our environment about user-installed node tools
+PATH="$NPM_PACKAGES/bin:$PATH"
+# Unset manpath so we can inherit from /etc/manpath via the `manpath` command
+unset MANPATH  # delete if you already modified MANPATH elsewhere in your configuration
+MANPATH="$NPM_PACKAGES/share/man:$(manpath)"
+
+# Tell Node about these packages
+NODE_PATH="$NPM_PACKAGES/lib/node_modules:$NODE_PATH"
