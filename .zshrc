@@ -1,5 +1,5 @@
 # Yuki's zshrc
-# ----------
+# ------------
 
 export ZPLUG_HOME="$HOME/.zplug"
 
