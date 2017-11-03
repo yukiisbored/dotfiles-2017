@@ -37,6 +37,28 @@ bindkey "^[[3~" delete-char
 bindkey "^[[A" history-substring-search-up
 bindkey "^[[B" history-substring-search-down
 
+# Portable(tm) Colored ls
+# -----------------------
+
+OS=$(uname -o)
+
+case "$OS" in
+	"OpenBSD")
+		if which colorls >/dev/null 2>&1; then
+			alias ls="colorls -G"
+		fi
+		;;
+	"FreeBSD")
+		alias ls="ls -G"
+		;;
+	"Linux")
+		alias ls="ls --color"
+		;;
+	*)
+		# Boo, no colored ls :(
+		;;
+esac
+
 # zplug configuration
 # -------------------
 
