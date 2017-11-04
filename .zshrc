@@ -18,8 +18,17 @@ fi
 
 export PATH="$HOME/.local/bin:$PATH"
 export VIRTUALENVWRAPPER_PYTHON="/usr/bin/python3"
+export EDITOR="emacsclient -t"
 
 alias dot='git --git-dir=$HOME/.cfg --work-tree=$HOME'
+
+# Emacs rulez!
+# ------------
+
+alias e="emacsclient -t"
+alias ec="emacsclient -c"
+alias vim="emacsclient -t"
+alias vi="emacsclient -t"
 
 # Zsh configuration
 # -----------------
