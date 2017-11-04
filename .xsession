@@ -10,5 +10,6 @@ xset b off
 feh --bg-fill ~/.wallpaper
 xfce4-power-manager -d
 xscreensaver -no-splash &
+emacs --daemon
 
 exec dbus-launch dwm
