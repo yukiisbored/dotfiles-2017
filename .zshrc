@@ -16,7 +16,8 @@ fi
 # General configuration
 # ---------------------
 
-export PATH="$HOME/.local/bin:$PATH"
+export GOPATH="$HOME/go"
+export PATH="$HOME/.local/bin:$GOPATH/bin:$PATH"
 export VIRTUALENVWRAPPER_PYTHON="/usr/bin/python3"
 export EDITOR="emacsclient -t"
 
