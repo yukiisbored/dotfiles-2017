@@ -1,0 +1,29 @@
+URxvt*termName: rxvt-256color
+URxvt*xftAntialias: true
+*background: #081424
+*foreground: #eeeeee
+URxvt*cursorColor: #aaaaaa
+URxvt*colorUL: #366060
+URxvt*underlineColor: #115181
+*color0: #12335a
+*color1: #0e4979
+*color2: #29b4dd
+*color3: #16cbe8
+*color4: #106594
+*color5: #397fb3
+*color6: #1b89a0
+*color7: #396387
+*color8: #4fabc2
+*color9: #1099c3
+*color10: #5897a9
+*color11: #537694
+*color12: #2e4d5f
+*color13: #017eb7
+*color14: #84bdce
+*color15: #8dd4e8
+URxvt.font: xft:Go Mono:size=9
+URxvt.perl-ext-common: default,matcher
+URxvt.url-launcher: /usr/bin/xdg-open
+URxvt.matcher.button: 1
+URxvt.scrollBar: false
+URxvt.boldFont:
