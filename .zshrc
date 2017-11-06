@@ -20,6 +20,7 @@ export GOPATH="$HOME/go"
 export PATH="$HOME/.local/bin:$GOPATH/bin:$PATH"
 export VIRTUALENVWRAPPER_PYTHON="/usr/bin/python3"
 export EDITOR="emacsclient -t"
+export GPG_TTY="$(tty)"
 
 alias dot='git --git-dir=$HOME/.cfg --work-tree=$HOME'
 

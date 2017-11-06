@@ -4,4 +4,3 @@ export XDG_DATA_HOME=$HOME/.local/share
 export XDG_CACHE_HOME=$HOME/.cache
 export XDG_RUNTIME_DIR=$HOME/.cache
 export GDK_USE_XFT=1
-export GPG_TTY=$(tty)
