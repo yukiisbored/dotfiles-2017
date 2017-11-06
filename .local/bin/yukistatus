@@ -1,0 +1,78 @@
+#!/usr/bin/env bash
+
+# yukistatus - yuki's personal dwmstatus script which aims *nix compatibility
+
+# Copyright (c) 2017 Muhammad Kaisar Arkhan <yukiisbored@disroot.org>
+
+# Permission to use, copy, modify, and distribute this software for any
+# purpose with or without fee is hereby granted, provided that the above
+# copyright notice and this permission notice appear in all copies.
+#
+# THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL WARRANTIES
+# WITH REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF
+# MERCHANTABILITY AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR
+# ANY SPECIAL, DIRECT, INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES
+# WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN
+# ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
+# OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
+
+# Requires: bash 4.0+, awk, sed, date
+
+# TODO: Add support for OpenBSD
+# TODO: Add support for Linux (GNU coreutils/ALSA)
+
+# Configurable variables
+# ======================
+
+FREEBSD_MIXER_DEVICE="vol"
+
+# Runtime variables
+# =================
+
+OS="$(uname -o | awk '{print tolower($0)}')"
+VOLUME_FUNCTION="update_volume_$OS"
+BATTERY_FUNCTION="update_battery_$OS"
+
+VOLUME=""
+BATTERY=""
+DATE_TIME=""
+
+# Operating system varied functions
+# =================================
+
+# FreeBSD
+# -------
+
+function update_volume_freebsd {
+    VOLUME="$(mixer "$FREEBSD_MIXER_DEVICE" |
+              sed -e 's/Mixer.*is currently set to //')"
+}
+
+function update_battery_freebsd {
+    BATTERY="$(sysctl hw.acpi.battery.life | sed -e 's/hw.*: //')%"
+}
+
+# POSIX portable functions
+# ========================
+
+function update_date_time {
+    DATE_TIME="$(date +'%Y-%m-%d %A %T')"
+}
+
+# Main program
+# ============
+
+function update {
+    eval $VOLUME_FUNCTION
+    eval $BATTERY_FUNCTION
+    update_date_time
+}
+
+while :
+do
+    update
+    STATUS="$VOLUME $BATTERY $DATE_TIME"
+    xsetroot -name "$STATUS"
+    echo "$STATUS"
+    sleep 1
+done
