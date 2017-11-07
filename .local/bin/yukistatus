@@ -29,7 +29,7 @@ FREEBSD_MIXER_DEVICE="vol"
 # Runtime variables
 # =================
 
-OS="$(uname -o | awk '{print tolower($0)}')"
+OS="$(uname -s | awk '{print tolower($0)}')"
 VOLUME_FUNCTION="update_volume_$OS"
 BATTERY_FUNCTION="update_battery_$OS"
 

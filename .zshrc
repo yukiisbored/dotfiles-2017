@@ -53,7 +53,7 @@ bindkey "^[[B" history-substring-search-down
 # Portable(tm) Colored ls
 # -----------------------
 
-OS=$(uname -o)
+OS=$(uname -s)
 
 case "$OS" in
 	"OpenBSD")
