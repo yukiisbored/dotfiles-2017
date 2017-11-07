@@ -19,7 +19,6 @@ fi
 export GOPATH="$HOME/go"
 export PATH="$HOME/.local/bin:$GOPATH/bin:$PATH"
 export VIRTUALENVWRAPPER_PYTHON="/usr/bin/python3"
-export EDITOR="emacsclient -t"
 export GPG_TTY="$(tty)"
 
 alias dot='git --git-dir=$HOME/.cfg --work-tree=$HOME'
@@ -27,10 +26,13 @@ alias dot='git --git-dir=$HOME/.cfg --work-tree=$HOME'
 # Emacs rulez!
 # ------------
 
-alias e="emacsclient -t"
-alias ec="emacsclient -c"
-alias vim="emacsclient -t"
-alias vi="emacsclient -t"
+if which emacsclient >/dev/null 2>&1; then
+    export EDITOR="emacsclient -t"
+    alias e="emacsclient -t"
+    alias ec="emacsclient -c"
+    alias vim="emacsclient -t"
+    alias vi="emacsclient -t"
+fi
 
 # Zsh configuration
 # -----------------
