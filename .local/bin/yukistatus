@@ -25,6 +25,7 @@
 # ======================
 
 FREEBSD_MIXER_DEVICE="vol"
+LINUX_POWER_SUPPLY="BAT0"
 
 # Runtime variables
 # =================
@@ -50,6 +51,18 @@ function update_volume_freebsd {
 
 function update_battery_freebsd {
     BATTERY="$(sysctl hw.acpi.battery.life | sed -e 's/hw.*: //')%"
+}
+
+# Linux
+# -----
+
+function update_volume_linux {
+    VOLUME="$(amixer sget Master |
+              awk -F"[][]" '/dB/ { print $2 }')"
+}
+
+function update_battery_linux {
+    BATTERY="$(cat /sys/class/power_supply/"$LINUX_POWER_SUPPLY"/capacity)%"
 }
 
 # POSIX portable functions
