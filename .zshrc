@@ -26,7 +26,7 @@ alias dot='git --git-dir=$HOME/.cfg --work-tree=$HOME'
 # Emacs rulez!
 # ------------
 
-if command -v emacsclient; then
+if command -v emacsclient >/dev/null 2>&1; then
     export EDITOR="emacsclient -t"
     alias e="emacsclient -t"
     alias ec="emacsclient -c"
@@ -57,7 +57,7 @@ OS=$(uname -s)
 
 case "$OS" in
 	"OpenBSD")
-		if command -v colorls; then
+		if command -v colorls >/dev/null 2>&1; then
 			alias ls="colorls -G"
 		fi
 		;;
