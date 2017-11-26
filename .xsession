@@ -13,4 +13,6 @@ xscreensaver -no-splash &
 yukistatus &
 emacs --daemon
 
-exec dbus-launch dwm
+eval $(dbus-launch --sh-syntax --exit-with-session)
+
+exec dwm
