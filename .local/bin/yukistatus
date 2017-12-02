@@ -56,9 +56,23 @@ function update_battery_freebsd {
 # Linux
 # -----
 
-function update_volume_linux {
+function update_volume_alsa {
     VOLUME="$(amixer sget Master |
               awk -F"[][]" '/dB/ { print $2 }')"
+}
+
+function update_volume_pulseaudio {
+    VOLUME="$(pactl list sinks | grep '^[[:space:]]Volume:' | \
+              head -n $(( $SINK + 1 )) | tail -n 1 | \
+              sed -e 's,.* \([0-9][0-9]*\)%.*,\1,')%"
+}
+
+function update_volume_linux {
+    if hash pulseaudio 2>/dev/null && pulseaudio --check; then
+        update_volume_pulseaudio
+    else
+        update_volume_alsa
+    fi
 }
 
 function update_battery_linux {
