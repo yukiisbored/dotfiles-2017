@@ -47,6 +47,7 @@ bindkey -e
 bindkey "^[Od" backward-word
 bindkey "^[Oc" forward-word
 bindkey "^[[3~" delete-char
+bindkey "^H" backward-kill-word
 bindkey "^[[A" history-substring-search-up
 bindkey "^[[B" history-substring-search-down
 
