@@ -5,6 +5,10 @@
 xrdb -m ~/.Xresources
 xset b off
 
+if [ -f .quirky-keys ]; then
+    xset r off
+fi
+
 ~/.screenlayout/work.sh
 
 feh --bg-fill ~/.wallpaper
