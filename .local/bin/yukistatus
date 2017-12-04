@@ -79,6 +79,17 @@ function update_battery_linux {
     BATTERY="$(cat /sys/class/power_supply/"$LINUX_POWER_SUPPLY"/capacity)%"
 }
 
+# OpenBSD
+# -------
+
+function update_volume_openbsd {
+    VOLUME="$(mixerctl outputs.master | sed -e 's/outputs.*=//')"
+}
+
+function update_battery_openbsd {
+    BATTERY="$(apm -l)%"
+}
+
 # POSIX portable functions
 # ========================
 
