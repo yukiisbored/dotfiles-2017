@@ -17,7 +17,7 @@ fi
 # ---------------------
 
 export GOPATH="$HOME/go"
-export PATH="$HOME/.local/bin:$GOPATH/bin:$PATH"
+export PATH="$HOME/.local/bin:$GOPATH/bin:$HOME/.gem/ruby/2.4/bin:$PATH"
 export VIRTUALENVWRAPPER_PYTHON="/usr/bin/python3"
 export GPG_TTY="$(tty)"
 
@@ -106,3 +106,6 @@ if ! zplug check --verbose; then
 fi
 
 zplug load
+
+# added by travis gem
+[ -f /home/yuki/.travis/travis.sh ] && source /home/yuki/.travis/travis.sh
