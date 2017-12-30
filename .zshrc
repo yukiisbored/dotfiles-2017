@@ -68,6 +68,10 @@ case "$OS" in
     "Linux")
         alias ls="ls --color"
         ;;
+    "SunOS")
+        # TODO: Proper checks to see if it's GNU
+        alias ls="ls --color"
+        ;;
     *)
         # Boo, no colored ls :(
         ;;
