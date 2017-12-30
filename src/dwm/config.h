@@ -2,14 +2,14 @@
 
 /* appearance */
 static const char *fonts[] = {
-	"Go Mono:size=9"
+	"Helvetica:size=9"
 };
-static const char dmenufont[]       = "Go Mono:size=9";
-static const char normbordercolor[] = "#115181";
-static const char normbgcolor[]     = "#081424";
+static const char dmenufont[]       = "Helvetica:size=9";
+static const char normbordercolor[] = "#587d9d";
+static const char normbgcolor[]     = "#5d5f5a";
 static const char normfgcolor[]     = "#eeeeee";
-static const char selbordercolor[]  = "#0193cc";
-static const char selbgcolor[]      = "#3c8dc4";
+static const char selbordercolor[]  = "#8fa9c0";
+static const char selbgcolor[]      = "#8fa9c0";
 static const char selfgcolor[]      = "#eeeeee";
 static const unsigned int borderpx  = 4;        /* border pixel of windows */
 static const unsigned int snap      = 32;       /* snap pixel */
