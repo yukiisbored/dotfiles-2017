@@ -57,20 +57,20 @@ bindkey "^[[B" history-substring-search-down
 OS=$(uname -s)
 
 case "$OS" in
-	"OpenBSD")
-		if command -v colorls >/dev/null 2>&1; then
-			alias ls="colorls -G"
-		fi
-		;;
-	"FreeBSD")
-		alias ls="ls -G"
-		;;
-	"Linux")
-		alias ls="ls --color"
-		;;
-	*)
-		# Boo, no colored ls :(
-		;;
+    "OpenBSD")
+        if command -v colorls >/dev/null 2>&1; then
+            alias ls="colorls -G"
+        fi
+        ;;
+    "FreeBSD")
+        alias ls="ls -G"
+        ;;
+    "Linux")
+        alias ls="ls --color"
+        ;;
+    *)
+        # Boo, no colored ls :(
+        ;;
 esac
 
 # zplug configuration
