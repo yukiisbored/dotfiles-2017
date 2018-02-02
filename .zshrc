@@ -65,6 +65,9 @@ case "$OS" in
     "FreeBSD")
         alias ls="ls -G"
         ;;
+    "DragonFly")
+        alias ls="ls -G"
+        ;;
     "Linux")
         alias ls="ls --color"
         ;;

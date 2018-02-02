@@ -53,6 +53,13 @@ function update_battery_freebsd {
     BATTERY="$(sysctl hw.acpi.battery.life | sed -e 's/hw.*: //')%"
 }
 
+# DragonFly
+# ---------
+
+function update_volume_dragonfly {
+        update_volume_freebsd
+}
+
 # Linux
 # -----
 
@@ -75,10 +82,6 @@ function update_volume_linux {
     fi
 }
 
-function update_battery_linux {
-    BATTERY="$(cat /sys/class/power_supply/"$LINUX_POWER_SUPPLY"/capacity)%"
-}
-
 # OpenBSD
 # -------
 
@@ -86,31 +89,4 @@ function update_volume_openbsd {
     VOLUME="$(mixerctl outputs.master | sed -e 's/outputs.*=//')"
 }
 
-function update_battery_openbsd {
-    BATTERY="$(apm -l)%"
-}
-
-# POSIX portable functions
-# ========================
-
-function update_date_time {
-    DATE_TIME="$(date +'%Y-%m-%d %A %T')"
-}
-
-# Main program
-# ============
-
-function update {
-    eval $VOLUME_FUNCTION
-    eval $BATTERY_FUNCTION
-    update_date_time
-}
-
-while :
-do
-    update
-    STATUS="$VOLUME $BATTERY $DATE_TIME"
-    xsetroot -name "$STATUS"
-    echo "$STATUS"
-    sleep 1
-done
+eval $VOLUME_FUNCTION && echo $VOLUME

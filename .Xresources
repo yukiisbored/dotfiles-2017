@@ -1,29 +1,29 @@
 URxvt*termName: rxvt-256color
 URxvt*xftAntialias: true
-*background: #292a28
+*background: #06202c
 *foreground: #eeeeee
 URxvt*cursorColor: #aaaaaa
 URxvt*colorUL: #366060
 URxvt*underlineColor: #115181
-*color0: #8fa9c0
-*color1: #7a90a7
-*color2: #6c7a87
-*color3: #646965
-*color4: #535655
-*color5: #9fbed4
-*color6: #484240
-*color7: #323232
-*color8: #847570
-*color9: #8fa9c0
-*color10: #7a90a7
-*color11: #6c7a87
-*color12: #646965
-*color13: #535655
-*color14: #9fbed4
-*color15: #484240
-URxvt.font: xft:Go Mono:size=9
-URxvt.perl-ext-common: default,matcher
-URxvt.url-launcher: /usr/bin/xdg-open
-URxvt.matcher.button: 1
-URxvt.scrollBar: false
-URxvt.boldFont:
+*color0: #0079aa
+*color1: #1389b9
+*color2: #2a95c9
+*color3: #3fa5d6
+*color4: #4890b8
+*color5: #457b9d
+*color6: #59b5de
+*color7: #778e96
+*color8: #71c8e5
+*color9: #00658c
+*color10: #5fa0c6
+*color11: #0a5175
+*color12: #2f5582
+*color13: #012c43
+*color14: #1d4262
+*color15: #1f6b9a
+XTerm.termName: xterm-256color
+XTerm.vt100.locale: true
+XTerm.vt100.backarrowKey: false
+XTerm.ttyModes: erase ^?
+XTerm.vt100.font: xft:Go Mono:size=9
+XTerm*allowBoldFonts: false
