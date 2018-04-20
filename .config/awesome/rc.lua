@@ -58,18 +58,7 @@ modkey = "Mod4"
 
 -- Table of layouts to cover with awful.layout.inc, order matters.
 awful.layout.layouts = {
-   awful.layout.suit.tile,
-   awful.layout.suit.tile.left,
-   awful.layout.suit.tile.bottom,
-   awful.layout.suit.tile.top,
-   awful.layout.suit.fair,
-   awful.layout.suit.fair.horizontal,
-   awful.layout.suit.spiral,
    awful.layout.suit.spiral.dwindle,
-   awful.layout.suit.max,
-   awful.layout.suit.max.fullscreen,
-   awful.layout.suit.magnifier,
-   awful.layout.suit.corner.nw,
    awful.layout.suit.floating,
 }
 -- }}}
@@ -94,14 +83,14 @@ end
 myawesomemenu = {
    { "hotkeys", function() return false, hotkeys_popup.show_help end},
    { "manual", terminal .. " -e man awesome" },
-   { "edit config", editor_cmd .. " " .. awesome.conffile },
+   { "conf", editor_cmd .. " " .. awesome.conffile },
    { "restart", awesome.restart },
    { "quit", function() awesome.quit() end}
 }
 
 mymainmenu = awful.menu({ items = {
                              { "awesome", myawesomemenu, beautiful.awesome_icon },
-                             { "open terminal", terminal },
+                             { "term", terminal },
                              { "lock", lock }
 }
                        })
@@ -122,7 +111,7 @@ myspace = wibox.widget{
 }
 
 -- Create a textclock widget
-mytextclock = wibox.widget.textclock('%Y年%m月%d日 (%a) %H:%M')
+mytextclock = wibox.widget.textclock('%Y年%m月%d日 (<span color="#ef6b7b">%a</span>) %H:%M')
 
 -- Create a textbattery widget
 mytextbattery = awful.widget.watch('yukibat', 5)
@@ -212,7 +201,7 @@ awful.screen.connect_for_each_screen(function(s)
       s.mytasklist = awful.widget.tasklist(s, awful.widget.tasklist.filter.currenttags, tasklist_buttons)
 
       -- Create the wibox
-      s.mywibox = awful.wibar({ position = "bottom", screen = s })
+      s.mywibox = awful.wibar({ position = "top", screen = s })
 
       -- Add widgets to the wibox
       s.mywibox:setup {

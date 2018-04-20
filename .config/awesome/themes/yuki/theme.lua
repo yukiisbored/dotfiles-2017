@@ -6,24 +6,24 @@ theme.wallpaper = themes_path .. "yuki/wallpaper.jpg"
 -- }}}
 
 -- {{{ Styles
-theme.font      = "Lato 10"
+theme.font      = "Droid Sans Mono 9"
 
 -- {{{ Colors
-theme.fg_normal  = "#a1c0d1"
-theme.fg_focus   = "#80c0d8"
-theme.fg_urgent  = "#88a8b7"
-theme.bg_normal  = "#06202c"
-theme.bg_focus   = "#11506f"
-theme.bg_urgent  = "#0074a5"
+theme.fg_normal  = "#707070"
+theme.fg_focus   = theme.fg_normal
+theme.fg_urgent  = theme.fg_normal
+theme.bg_normal  = "#f3f3f300"
+theme.bg_focus   = "#5dc7ea"
+theme.bg_urgent  = "#f59335"
 theme.bg_systray = theme.bg_normal
 -- }}}
 
 -- {{{ Borders
 theme.useless_gap   = 8
 theme.border_width  = 2
-theme.border_normal = "#0b7eae"
-theme.border_focus  = "#7acae3"
-theme.border_marked = "#0074a5"
+theme.border_normal = "#169dca"
+theme.border_focus  = "#5dc7ea"
+theme.border_marked = "#ff0000"
 -- }}}
 
 -- {{{ Menu
