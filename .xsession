@@ -13,6 +13,6 @@ fi
 
 eval $(dbus-launch --sh-syntax --exit-with-session)
 
-emacs --daemon &
+workrave &
 
 exec awesome
