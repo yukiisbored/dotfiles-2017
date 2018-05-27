@@ -43,5 +43,8 @@ XTerm.termName: xterm-256color
 XTerm.vt100.locale: true
 XTerm.vt100.backarrowKey: false
 XTerm.ttyModes: erase ^?
-XTerm.vt100.font: xft:Droid Sans Mono:size=9
+XTerm.vt100.font: xft:Go Mono:size=9
 XTerm*allowBoldFonts: false
+XTerm*metaSendsEscape: true
+*VT100*translations: #override Shift <Btn1Up>: exec-formatted("firefox '%t'", PRIMARY)
+XTerm*utf8: 1
